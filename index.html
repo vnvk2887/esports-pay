@@ -1,16 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>MVGR Esports Payment Redirect</title>
-    <script>
-        // Immediately redirects the user to the UPI app upon page load
-        window.onload = function() {
-            window.location.href = "upi://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR";
-        };
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVGR Esports Payment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212; /* Dark theme for esports */
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h2 { margin-top: 0; color: #00ffcc; }
+        p { color: #aaaaaa; margin-bottom: 25px; font-size: 14px; }
+        .amount { font-size: 24px; font-weight: bold; color: #fff; margin-bottom: 20px; display: block; }
+        
+        .pay-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            transition: opacity 0.2s;
+            box-sizing: border-box;
+        }
+        .pay-btn:active { opacity: 0.8; }
+        
+        /* Official brand colors for the buttons */
+        .phonepe { background-color: #5f259f; }
+        .gpay { background-color: #1a73e8; }
+        .paytm { background-color: #002970; }
+        .bhim { background-color: #ff7a00; }
+        .cred { background-color: #000000; border: 1px solid #444; }
+        .other { background-color: #333333; border: 1px solid #555; margin-top: 20px; }
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
-    <h2>Redirecting to your Payment App...</h2>
-    <p>If your app doesn't open automatically, <a href="upi://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR">click here to pay ₹40</a>.</p>
+<body>
+
+    <div class="container">
+        <h2>MVGR Esports</h2>
+        <span class="amount">Entry Fee: ₹40</span>
+        <p>Paying: Vanthala Jwitesh</p>
+
+        <a href="phonepe://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn phonepe">Pay with PhonePe</a>
+        
+        <a href="tez://upi/pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn gpay">Pay with Google Pay</a>
+        
+        <a href="paytmmp://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn paytm">Pay with Paytm</a>
+
+        <a href="bhim://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn bhim">Pay with BHIM</a>
+
+        <a href="cred://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn cred">Pay with CRED</a>
+        
+        <a href="upi://pay?pa=6304772860@ybl&pn=Vanthala%20Jwitesh&am=40&cu=INR" class="pay-btn other">Other UPI Apps</a>
+    </div>
+
 </body>
 </html>
